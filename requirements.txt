@@ -1,4 +1,4 @@
 aiohttp
-UnityPy==1.23.0
+UnityPy==1.24.2
 lz4
 apsw-sqlite3mc
