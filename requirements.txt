@@ -2,3 +2,4 @@ aiohttp
 UnityPy==1.24.2
 lz4
 apsw-sqlite3mc
+Pillow
