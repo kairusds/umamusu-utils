@@ -26,7 +26,7 @@ Set `ASYNC_DOWNLOAD` to `False` to download in a less aggressive way.
 
 Uses the decrypted meta file if `decrypt_meta.py` was used before this script.
 
-The output files are located at `storage/data`.
+The output files are located at `storage/data (storage/dat if HPATHS is set to True)`.
 
 ### `items_extract.py`
 
