@@ -5,7 +5,7 @@ Utils for scrapping honse game files.
 ## Requirements
 
 You must insert into the `/storage` folder your own copy of the `meta` file and the `master` folder.
-You can grab them from the game's root dir: `/data/data/jp.co.cygames.umamusume/files`.
+You can grab them from the game's root directory on Android: `/data/data/jp.co.cygames.umamusume/files`.
 
 All scripts have required dependencies, run `pip install -r requirements.txt` to install all of them.
 
@@ -56,6 +56,7 @@ Set `HPATHS` inside of the script to `True` if you also set `HPATHS` to `True` i
 Can be customized which folders are included or excluded and whether to skip existing files with these lines of code inside the script:
 
 ```
+# Skip existing decrypted assets
 SKIP_EXISTING = True
 
 # If this is NOT empty, ONLY assets within these folders will be decrypted.
@@ -83,3 +84,27 @@ Dumps the contents of the meta file into a JSON file.
 It's recommended to view the file with something like `neovim` or `vim` instead.
 
 Output file can be found at `storage/meta_dump.json`.
+
+### `extract_textures.py`
+
+Extracts `Texture2D` and `Sprite` assets from Unity bundles into PNG files.
+
+Set `HPATHS` inside of the script to `True` if you also set `HPATHS` to `True` in `data_download.py`.
+
+```
+# Skip existing extracted assets
+SKIP_EXISTING = True
+
+# If this is NOT empty, ONLY assets within these folders will be processed.
+# If this IS empty, ALL assets will be processed (with exclusions).
+# Example:
+# INCLUDED_FOLDERS = set()
+# Example: INCLUDED_FOLDERS = {"atlas/"}
+# Example: INCLUDED_FOLDERS = {"atlas/rank/", "atlas/statusrank", "uianimation/"}
+INCLUDED_FOLDERS = {"atlas/rank/", "atlas/statusrank", "uianimation/"}
+
+# Any asset from these folders will be explicitly SKIPPED.
+EXCLUDED_FOLDERS = set()
+```
+
+The output files are located at `storage/extracted_textures`.
