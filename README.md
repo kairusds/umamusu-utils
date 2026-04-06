@@ -4,14 +4,44 @@ Utils for scrapping honse game files.
 
 ## Requirements
 
-You must insert into the `/storage` folder your own copy of the `meta` file and the `master` folder.
-You can grab them from the game's root directory on Android: `/data/data/jp.co.cygames.umamusume/files`.
+**Python 3.12+**
 
-All scripts have required dependencies, run `pip install -r requirements.txt` to install all of them.
+You must put your copy of the `meta` file in the `storage` folder.
+
+You can grab the `meta` file from these folders:
+
+**Android (if you have external documents provider patched to the game or a rooted device)**: `/data/data/jp.co.cygames.umamusume/files`
+
+**For Windows, refer to** [the Hachimi Edge FAQ](https://hachimi.noccu.art/docs/hachimi/faqs#how-do-i-find-the-game-install-folder) to find the game's base folder and find the `meta` file under the subfolders: `UmamusumePrettyDerby_Jpn_Data\Persistent` or `umamusume_Data\Persistent`.
+
+### Activating venv for using the scripts
+
+Run these commands:
+
+**Linux**
+
+```
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+**Windows**
+
+```
+python -m venv .venv
+.venv\Scripts\activate.bat
+```
+**If `activate.bat` didn't work**: `.venv\Scripts\Activate.ps1`
+
+(Note: If you get an error saying something like "scripts is disabled on this system," you need to **run your terminal app as an Administrator** and run this command once: `Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser`.)
+
+### Install dependencies
+
+Afterwards, run `pip install -r requirements.txt` to install all dependencies of the scripts.
 
 ## Utils
 
-All utils reside inside the `scripts` folder.
+All utils reside inside the `scripts` folder. Run them with `python scripts/SCRIPTNAME.py`.
 
 ### `data_download.py`
 
